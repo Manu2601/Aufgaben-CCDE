@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millionär</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px; /* Ändere die Breite hier nach Bedarf */
+            width: 100%;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        button {
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+        card .a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Wer wird Millionär?</h1>
+        <h2>{{question}}</h2>
+        <ul>
+            {% for answer in answers %}
+              <li> <a href="/question/{{loop.index}}"><button>{{answer}}</button></a></li>
+            {% endfor %}
+        </ul>
+        <a href ="/questions">Zu den Fragen</a>
+    </div>
+</body>
+</html>
